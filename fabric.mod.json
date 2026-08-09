@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "fake-economy",
+  "version": "${version}",
+  "name": "Fake Economy",
+  "description": "Client-side fake money and shard scoreboard controls with a configurable GUI and local payment simulator.",
+  "authors": [
+    "Fintox"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.fakemoney.scoreboard.client.FakeMoneyScoreboardClient"
+    ]
+  },
+  "mixins": [
+    "fake-money-scoreboard.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
