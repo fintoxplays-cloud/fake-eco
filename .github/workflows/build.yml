@@ -19,16 +19,14 @@ jobs:
           distribution: temurin
           cache: gradle
 
-      - name: Install Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '9.2.0'
+      - name: Make Gradle executable
+        run: chmod +x gradlew
 
       - name: Build
-        run: gradle build --no-daemon --refresh-dependencies
+        run: ./gradlew build
 
-      - name: Upload JAR
+      - name: Upload mod
         uses: actions/upload-artifact@v4
         with:
-          name: fake-economy
+          name: fake-eco
           path: build/libs/*.jar
